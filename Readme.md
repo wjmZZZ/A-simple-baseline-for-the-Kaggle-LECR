@@ -12,17 +12,30 @@
 
 This is a Natural Language Processing (NLP) competition that focuses on semantic matching for text. However, it also involves many concepts and techniques from recommendation systems, which are worth exploring. The competition has two stages: **Retriever** and **Reranker**.
 
-## Overview 📝
 
-This competition has two stages: retriever and re-ranker.
 
 ### Stage 1: Retriever 📖
 
-In the retriever stage, the goal is to retrieve as many `content_id` as possible for each topic. This is done by forming a new dataset, and determining whether each `content_id` in the retrieved set is part of the `ground truth` or not. A label of 0 or 1 is assigned accordingly.
+In the retriever stage, the goal is to retrieve as many `content_id` as possible for each `topic_id`. Then create a new dataset `top_n.csv`, and determining whether each `content_id` in the retrieved set is part of the `ground truth` or not. A label of 0 or 1 is assigned accordingly.
 
 ### Stage 2: Reranker 🔍
 
 In the re-ranker stage, the aim is to determine which of the retrieved content IDs should be kept.
+
+
+
+## 💻 Usage
+
+To run the code for both stages, use the following command:
+
+```
+python stage1/Main.py
+python stage2/Main.py
+```
+
+
+
+The code structure is as follows:
 
 ```
 
@@ -37,12 +50,12 @@ In the re-ranker stage, the aim is to determine which of the retrieved content I
 |-- outputs
 |   |-- ex
 |   |   |-- oof_df.csv
-|   |   |-- model_fold0.pth
+|   |   |-- xx_fold0.pth
 |   |   |-- train.log
 |   |   |-- train_top20.csv
 |   |   |-- train_top5.csv
 |   |   |-- train_top50.csv
-|   |-- src
+|-- src
 |   |-- stage1
 |   |   |-- Config.py
 |   |   |-- Dataset.py
@@ -62,12 +75,5 @@ In the re-ranker stage, the aim is to determine which of the retrieved content I
 
 ```
 
-## 💻 Usage
 
-To run the code for both stages, use the following command:
-
-```
-python stage1/Main.py
-python stage2/Main.py
-```
 
